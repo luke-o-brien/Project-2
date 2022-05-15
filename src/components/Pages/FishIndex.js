@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react'
+
+import Fish from "./Fish"
 
 
 
 const FishIndex = (props) => {
+
+
 
   return (
     <section>
@@ -11,12 +14,16 @@ const FishIndex = (props) => {
       </div>
       <div>
         {props.data.map((fish, i) => {
-          return <Fish 
+
+          return <Fish
+
             key={i}
             name={fish["Species Name"]}
             fishingRate={fish["Fishing Rate"]}
-
-             />
+            population={fish["Population"]}
+            images={fish["Species Illustration Photo"]["src"] }
+            summary={fish["Biology"].replace(/\s*<.*?>\s*/g, "")}
+          />
         })}
       </div>
 
