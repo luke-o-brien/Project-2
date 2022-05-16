@@ -1,5 +1,6 @@
 import React, { useState , useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import "bulma"
 //Pages Imports
 import Home from "./components/Pages/Home";
 import Navbar from "./components/UI/Navbar";

@@ -3,24 +3,35 @@ import { Link, useParams } from "react-router-dom"
 import Fish from "./Fish"
 
 function ShowFish () {
-  const [fish, setFish] = useState(undefined)
+
+  const [fish, setFish] = useState()
 
   const { fishName } = useParams()
 
   useEffect(() => {
     
     async function fetchFish() {
-      const res = await fetch(`https://cryptic-everglades-76066.herokuapp.com/http://www.fishwatch.gov/api/species/${fishName}`)
+      const res = await fetch(`https://cryptic-everglades-76066.herokuapp.com/https://www.fishwatch.gov/api/species/${fishName}`)
       const data = await res.json()
-      console.log(data);
-      setFish(data)
+      setFish(data[0])
     } fetchFish()
-
+    
     
   }, [])
 
 
-  return <div></div>
+  return fish ? <section className="section">
+    <div className="container">
+      <Fish
+        name={fish["Species Name"]}
+        fishingRate={fish["Fishing Rate"]}
+        population={fish["Population"]}
+        images={fish["Species Illustration Photo"]["src"]}
+        summary={fish["Biology"].replace(/\s*<.*?>\s*/g, "")} />
+      <Link to="/fish-index">{"⬅ Back to all Fish Index"}</Link>
+    </div>
+  </section> : <p>Waiting for information</p>
+        
 }
 
 export default ShowFish

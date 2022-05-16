@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 const Fish = (props) => {
 
+  console.log(props.name);
 
   return <div>
     <Link to={`/fish/${props.name}`}>

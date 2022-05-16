@@ -1,11 +1,7 @@
 
 import Fish from "./Fish"
 
-
-
 const FishIndex = (props) => {
-
-
 
   return (
     <section>
@@ -14,9 +10,7 @@ const FishIndex = (props) => {
       </div>
       <div>
         {props.data.map((fish, i) => {
-
           return <Fish
-
             key={i}
             name={fish["Species Name"]}
             fishingRate={fish["Fishing Rate"]}
@@ -27,8 +21,7 @@ const FishIndex = (props) => {
         })}
       </div>
 
-    </section>
-  
+    </section>  
   )
 }
 
