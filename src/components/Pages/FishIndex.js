@@ -1,14 +1,16 @@
 
 import Fish from "./Fish"
+import styles from "./FishIndex.module.css"
+
 
 const FishIndex = (props) => {
 
   return (
-    <section>
+    <section className="section-container">
       <div className="container">
 
       </div>
-      <div>
+      <div className={styles.container_size}>
         {props.data.map((fish, i) => {
           return <Fish
             key={i}

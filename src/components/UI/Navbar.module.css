@@ -1,0 +1,6 @@
+.nav {
+  display: flexbox;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 80px;
+}
