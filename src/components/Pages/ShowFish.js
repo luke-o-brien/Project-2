@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import Fish from "./Fish"
+import SelectedFish from "./SelectedFish"
 
 function ShowFish () {
 
@@ -22,7 +22,7 @@ function ShowFish () {
 
   return fish ? <section className="section">
     <div className="container">
-      <Fish
+      <SelectedFish
         name={fish["Species Name"]}
         fishingRate={fish["Fishing Rate"]}
         population={fish["Population"]}

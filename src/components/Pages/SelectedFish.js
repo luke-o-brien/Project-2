@@ -4,23 +4,22 @@ import "bulma"
 import styles from "./Fish.module.css"
 
 
-const Fish = (props) => {
+const SelectedFish = (props) => {
 
-  console.log(props.name);
-
-  return <div className={styles.card_margin}>
+  return <div className={styles.card_styling}>
     <Link to={`/fish/${props.name}`}>
-      <div className={`card ${styles.card_dimensions}` }>
+      <div className="card">
         <div className="card-header">
           <div className="card-header-title">{props.name}</div>
         </div>
-        <div className={`card-image ${styles.card_image_size}`}>
+        <div className="card-image">
           <figure >
             <img src={props.images} alt={props.name} />  
           </figure>
         </div>
         <div className="card-content">
           <h5>{`Current Population Levels - ${props.population}`}</h5>
+          <p>{`Summary - ${props.summary}`}</p>
           <p>{`Current Fishing Rate - ${props.fishingRate}`}</p>
         </div>
       </div>
@@ -28,4 +27,4 @@ const Fish = (props) => {
   </div>
 }
 
-export default Fish
+export default SelectedFish

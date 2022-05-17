@@ -11,7 +11,8 @@ import SustainableEating from "./components/Pages/SustainableEating";
 function App() {
 
   const [fishData, setFishData] = useState([])
-  
+
+
   useEffect(() => {
     async function getData () {
       const res = await fetch("https://cryptic-everglades-76066.herokuapp.com/https://www.fishwatch.gov/api/species")
@@ -23,7 +24,7 @@ function App() {
 
   
   return (
-    <Router>
+    <Router >
       <Navbar />
       <Routes>
         <Route path="/" element={<Home data={fishData}/>} />

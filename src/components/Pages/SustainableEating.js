@@ -1,5 +1,5 @@
-import react from "react";
-import BetterChoiceFish from "../UI/BetterChoiceFish";
+//import react from "react";
+//import BetterChoiceFish from "../UI/BetterChoiceFish";
 
 function SustainableEating () {
   return (

@@ -1,20 +1,20 @@
 import React from "react"
 import { Link } from "react-router-dom"
-//import "bulma"
+import styles from "./Navbar.module.css"
 
 
 
 function Navbar () {
   return (
-    <header>
-      <nav className="navbar">
-        <Link className="navbar-item" to="/">
+    <header className={styles.nav}>
+      <nav className={styles.nav}>
+        <Link className={styles.navbar_item} to="/">
           Home
         </Link>
-        <Link className="navbar-item" to="/fish-index">
+        <Link className={styles.navbar_item} to="/fish-index">
           All Fish
         </Link>
-        <Link className="navbar-item" to="/sustainable-eating">
+        <Link className={styles.navbar_item} to="/sustainable-eating">
           Sustainable Eating
         </Link>
       </nav>
