@@ -1,18 +1,27 @@
-//import react from "react";
+import React from "react";
 //import BetterChoiceFish from "../UI/BetterChoiceFish";
 
+
+
 function SustainableEating () {
-  return (
-    <>
+  const [recipes, setRecipes] = React.useState(undefined)
+  React.useEffect(() => {
+    async function getRecipe () {
+      const res = await fetch("https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=c820ed89&app_key=bc3febdffacc984b50b815c07ddcbef9")
+      const aRecipe = await res.json()
+      setRecipes(aRecipe)
+      console.log(aRecipe.hits[0].recipe.label)
+    }
+    getRecipe()
+  }, [])
+  return <div>
+    {recipes ?
       <div>
-        <h2>sustainable Eating</h2>
-        <p>We are here to help you make more sustainable choices when deciding what to eat.</p>
-        <p>take a look below to discover some more ethical and sustainable fish options and get inspiration using our recipe finder</p>
+        <h1>{recipes.hits[0].recipe.label}</h1>
       </div>
-    </>
-  )
-  
+      : <p>Loading data please wait...</p>
+    }
+  </div>
 }
-SustainableEating()
 
 export default SustainableEating
