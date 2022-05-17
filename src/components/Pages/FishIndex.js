@@ -16,6 +16,7 @@ const FishIndex = (props) => {
             population={fish["Population"]}
             images={fish["Species Illustration Photo"]["src"] }
             summary={fish["Biology"].replace(/\s*<.*?>\s*/g, "")}
+            scientificName ={fish["Scientific Name"]}
           />
         })}
       </div>

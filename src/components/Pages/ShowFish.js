@@ -2,7 +2,18 @@ import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import SelectedFish from "./SelectedFish"
 
+
+const linkStyle = {
+  margin: "1rem",
+  fontSize: "1.5rem",
+  textDecoration: "none",
+  color: "black",
+  fontFamily: "Quicksand",
+};
+
 function ShowFish () {
+
+
 
   const [fish, setFish] = useState()
 
@@ -27,8 +38,11 @@ function ShowFish () {
         fishingRate={fish["Fishing Rate"]}
         population={fish["Population"]}
         images={fish["Species Illustration Photo"]["src"]}
-        summary={fish["Biology"].replace(/\s*<.*?>\s*/g, "")} />
-      <Link to="/fish-index">{"⬅ Back to all Fish Index"}</Link>
+        summary={fish["Biology"].replace(/\s*<.*?>\s*/g, "")} 
+        scientificName={fish["Scientific Name"]} 
+        habitat={fish["Habitat"].replace(/\s*<.*?>\s*/g, "")}/>
+      <br></br>
+      <Link to="/fish-index" style={linkStyle}>{"⬅ Back to the Fish Index"}</Link>
     </div>
   </section> : <p>Waiting for information</p>
         

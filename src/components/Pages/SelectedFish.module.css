@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Quicksand:wght@500&display=swap');
+
+.card_margin {
+  margin: 20px;
+}
+
+.card_style {
+  font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.card_style h5 {
+  margin: 10px 0px;
+  font-size: 2rem;
+}
+
+.card_style p {
+  margin: 0px 20px;
+}
+
+.card_header_text {
+  font-size: 2rem;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card_img_fig {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.card_img {
+  width: 700px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.return_fish_index {
+  color: black;
+}
+
+
