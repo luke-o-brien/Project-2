@@ -6,8 +6,6 @@ import styles from "./Fish.module.css"
 
 const Fish = (props) => {
 
-  console.log(props.name);
-
   return <div className={styles.card_margin}>
     <Link to={`/fish/${props.name}`}>
       <div className={`card ${styles.card_dimensions}` }>

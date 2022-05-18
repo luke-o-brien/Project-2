@@ -13,14 +13,11 @@ const linkStyle = {
 
 function ShowFish () {
 
-
-
-  const [fish, setFish] = useState()
+  const [fish, setFish] = useState(null)
 
   const { fishName } = useParams()
 
   useEffect(() => {
-    
     async function fetchFish() {
       const res = await fetch(`https://cryptic-everglades-76066.herokuapp.com/https://www.fishwatch.gov/api/species/${fishName}`)
       const data = await res.json()
@@ -30,6 +27,14 @@ function ShowFish () {
     
   }, [])
 
+  if (fish) {
+    for (const property in fish) {
+      if (fish[property] === null) {
+        fish[property] = "Information Unavailable"
+      }
+    }
+  }
+
 
   return fish ? <section className="section">
     <div className="container">
@@ -38,9 +43,9 @@ function ShowFish () {
         fishingRate={fish["Fishing Rate"]}
         population={fish["Population"]}
         images={fish["Species Illustration Photo"]["src"]}
-        summary={fish["Biology"].replace(/\s*<.*?>\s*/g, "")} 
+        summary={fish["Biology"].replace(/\s*<.*?>\s*/g, "").replace("&nbsp;", "")} 
         scientificName={fish["Scientific Name"]} 
-        habitat={fish["Habitat"].replace(/\s*<.*?>\s*/g, "")}/>
+        habitat={fish["Habitat"].replace(/\s*<.*?>\s*/g, "").replace("&nbsp;", "")}/>
       <br></br>
       <Link to="/fish-index" style={linkStyle}>{"⬅ Back to the Fish Index"}</Link>
     </div>
