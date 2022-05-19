@@ -1,7 +1,21 @@
-section {
+.index_section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.search_input {
+  width:200px;
+  height: 2rem;
+  margin-top: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.search_input:focus {
+    outline: none !important;
+    border:2px solid grey;
+    box-shadow: 0 0 5px grey;
+  }
 
 .container_size{
 
@@ -9,7 +23,6 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .container_size div {

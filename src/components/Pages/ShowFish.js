@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import SelectedFish from "./SelectedFish"
+import styles from "./ShowFish.module.css"
 
 
 const linkStyle = {
@@ -35,7 +36,6 @@ function ShowFish () {
     }
   }
 
-
   return fish ? <section className="section">
     <div className="container">
       <SelectedFish
@@ -49,7 +49,7 @@ function ShowFish () {
       <br></br>
       <Link to="/fish-index" style={linkStyle}>{"⬅ Back to the Fish Index"}</Link>
     </div>
-  </section> : <p>Waiting for information</p>
+  </section> : <div className={styles.waiting_Info}><p>Waiting for information</p></div>
         
 }
 

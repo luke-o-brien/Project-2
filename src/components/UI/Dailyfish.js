@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import SelectedFish from "../Pages/SelectedFish"
 
 function Dailyfish() {
 
@@ -44,17 +45,25 @@ function Dailyfish() {
     getDate()
   }, [])
 
+  if (displayFish) {
+    for (const property in displayFish) {
+      if (displayFish[property] === null) {
+        displayFish[property] = "Information Unavailable"
+      }
+    }
+  }
+
   return displayFish ?
     <>
       <h2>Fish of The Day</h2>
-      <h3>{displayFish["Species Name"]}</h3>
-      <img src={displayFish["Species Illustration Photo"].src}/>    
-      <p>{displayFish.Population}</p> 
-      <ul>
-        <li>
-          Key facts
-        </li>
-      </ul>
+      <SelectedFish
+        name={displayFish["Species Name"]}
+        fishingRate={displayFish["Fishing Rate"]}
+        population={displayFish["Population"]}
+        images={displayFish["Species Illustration Photo"]["src"]}
+        summary={displayFish["Biology"].replace(/\s*<.*?>\s*/g, "").replace("&nbsp;", "")} 
+        scientificName={displayFish["Scientific Name"]} 
+        habitat={displayFish["Habitat"].replace(/\s*<.*?>\s*/g, "").replace("&nbsp;", "")}/>
     </> : <p>Waiting for information</p>
 
 }

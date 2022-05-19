@@ -17,7 +17,11 @@ function App() {
     async function getData () {
       const res = await fetch("https://cryptic-everglades-76066.herokuapp.com/https://www.fishwatch.gov/api/species")
       const data = await res.json()
-      setFishData(data)
+      const filteredFish = data.filter((fish) => {
+        return fish["Species Name"] !== "Hard Clam/Northern Quahog"
+      })
+      console.log(data[18]["Species Name"]);
+      setFishData(filteredFish)
     } 
     getData()
   }, [])

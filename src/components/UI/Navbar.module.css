@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Quicksand:wght@500&display=swap');
 
 .nav {
-  display: flexbox;
-  flex-direction: row;
-  justify-content: center;
   height: 50px;
   background-color: #333;
   overflow: hidden;
