@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react"
 
-// const [dailyFish, setCountry] = React.useState(undefined)
 function Dailyfish() {
 
-  // const [fishdex, setFishdex] = useState(0)
-  // let [currentDate, setCurrentDate] = useState("")
-  // const [currentFish, setCurrentFish] = useState("")
   
   let fishdex = 0
   let currentDate = "00/00/0000"

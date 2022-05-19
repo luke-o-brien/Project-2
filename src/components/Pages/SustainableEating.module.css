@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Quicksand:wght@500&display=swap');
+
+.sustainable_eating_title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  padding: 10px;
+}
+
+.sustainable_eating_tagline {
+  text-align: center;
+  font-size: 30px;
+  padding: 0px 10px 50px 10px;
+}
+
+.sustainable_eating_description {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
