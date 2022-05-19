@@ -14,6 +14,7 @@ function RecipeCard() {
     fetchRecipeDetails()
 
   return (
+ 
     <>
       <h3>{RecipeDetails.label}</h3>
       <h4>Ingredients</h4>

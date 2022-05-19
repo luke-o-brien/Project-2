@@ -40,6 +40,8 @@ function Dailyfish() {
       setDisplayFish(dailyfish)
       console.log(dailyfish["Species Name"])
       localStorage.setItem("current fish", JSON.stringify(dailyfish));
+      const updateDate = new Date().toLocaleDateString();
+      localStorage.setItem("date", updateDate)
       
     }
     getDate()
