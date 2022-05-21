@@ -12,6 +12,7 @@ function FishAlternativeCard () {
   const [hake, setHake] = React.useState(false)
   const [trout, setTrout] = React.useState(false)
   const [mussels, setmussels] = React.useState(false)
+  const [arrow, setArrow] = React.useState(false)
 
  
   function handleClick(e) {
@@ -29,7 +30,7 @@ function FishAlternativeCard () {
     }
     console.log(selected)
     async function displayRecipes () {
-      const res = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${selected}&app_id=c820ed89&app_key=bc3febdffacc984b50b815c07ddcbef9`)
+      const res = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${selected}&app_id=c820ed89&app_key=bc3febdffacc984b50b815c07ddcbef9&random=true`)
       const data = await res.json()
       const recipesa = data.hits.map((hit) =>{
         return (hit.recipe)
@@ -43,6 +44,7 @@ function FishAlternativeCard () {
       setRecipes(recipesa)
 
       setFetched(!fetched)
+      setArrow(!arrow)
     }
     displayRecipes()
   }
@@ -51,35 +53,41 @@ function FishAlternativeCard () {
     <div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy Cod?</h2>
-        <h3>Try Hake</h3>
-        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="hake" onClick={handleClick} >View Recipes</button>
+        <h3>Why not try Hake?</h3>
+        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="hake" onClick={handleClick} >View Recipes<i className={arrow === false ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i></button>
         {fetched && hake && recipes.map((recipe) =>{
           return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
-            <p>{recipe.label}</p>
-            <img className={`fish-alternative-photo" ${styles.fish_alternative_photo}`} src={recipe.image}></img>
-            <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} href={recipe.url} >view full recipe</button>
+            <div className={`fish-alternative-div" ${styles.fish_alternative_content}`} >
+              <h4 className={`fish-alternative-photo" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
+              <img src={recipe.image} ></img>
+              <a className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >Click here to view full recipe!</a>
+            </div>
           </div>
         })}
       </div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy salmon?</h2>
-        <h3>Try Rainbow Trout</h3>
-        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="trout" onClick={handleClick} >View Recipes</button>
+        <h3>Why not try Rainbow Trout?</h3>
+        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="trout" onClick={handleClick} >View Recipes<i className={arrow === false ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i></button>
         {fetched && trout && recipes.map((recipe) =>{
-          return  <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
-            <p>{recipe.label}</p>
-            <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} href={recipe.url} >view full recipe</button>
+          return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
+            <div className={`fish-alternative-div" ${styles.fish_alternative_content}`} >
+              <h4 className={`fish-alternative-photo" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
+              <img src={recipe.image} ></img>
+              <a className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >Click here to view full recipe! </a>
+            </div>
           </div>
         })}
       </div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy prawn?</h2>
-        <h3>Try mussels</h3>
-        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="mussels" onClick={handleClick} >View Recipes</button>
+        <h3>Why not try mussels?</h3>
+        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="mussels" onClick={handleClick} >View Recipes<i className={arrow === false ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i></button>
         {fetched && mussels && recipes.map((recipe) =>{
           return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
-            <p>{recipe.label}</p>
-            <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} href={recipe.url} >view full recipe</button>
+            <h4 className={`fish-alternative-photo" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
+            <img src={recipe.image} ></img>
+            <button className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >view full recipe</button>
           </div>
         })}
       </div>

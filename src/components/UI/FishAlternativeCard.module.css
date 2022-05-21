@@ -4,6 +4,9 @@
   /* border: solid 1px black; */
   margin: 20px 2%;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  background-color: rgb(249, 249, 249);
+  padding: 10px;
+  text-align: center;
   
 }
 
@@ -14,12 +17,17 @@
 }
 
 .fish_alternative_div {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(249, 249, 249);
   margin: 10px;
 }
 
 .fish_alternative_photo {
-  height: 200px;
+  height: 250px;
   width: auto;
   margin:20px;
+}
+
+.fish_alternative_link {
+  display: block;
+  padding: 20px;
 }
