@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+
+.title_header {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  font-family: 'Righteous', cursive;
+  -webkit-text-fill-color: #1c87c9;
+}
+
+.title_text {
+  font-size: 4rem;
+}

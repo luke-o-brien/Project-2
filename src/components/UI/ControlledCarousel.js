@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Carousel from "react-bootstrap/Carousel";
+import styles from "./ControlledCarousel.module.css"
 
 
 function ControlledCarousel() {
@@ -18,18 +19,18 @@ function ControlledCarousel() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>DETAILED SUSTAINABLE SEAFOOD DATA</h3>
+          <h3 className={styles.carousel_h3}>DETAILED SUSTAINABLE SEAFOOD DATABASE</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.fishwatch.gov/sites/default/files/home_banner_salmon2.jpg"
+          src="https://www.fishwatch.gov/sites/default/files/home_banner_tuna.jpg"
           alt="Second slide"
         />
 
         <Carousel.Caption>
-          <h3>MORE THAN 100 DIFFERENT SPECIES PROFILED</h3>
+          <h3 className={styles.carousel_h3}>MORE THAN 100 DIFFERENT SPECIES PROFILED</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -40,7 +41,7 @@ function ControlledCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>SUSTAINABLE RECIPES</h3>
+          <h3 className={styles.carousel_h3}>SUSTAINABLE RECIPES</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -18,6 +18,7 @@
 
 .card_style {
   font-size: 1rem;
+  text-decoration: none !important; 
 }
 
 .card_content_style {
@@ -30,15 +31,9 @@
   margin: 10px;
   font-size: 1.25rem;
   font-family: 'Quicksand', sans-serif;
-  text-decoration: none;
-}
-
-.card_content_style h5 :link {
-  margin: 10px;
-  font-size: 1.25rem;
-  font-family: 'Quicksand', sans-serif;
   text-decoration: none !important; 
 }
+
 
 .card_header_text {
   font-size: 1.5rem;

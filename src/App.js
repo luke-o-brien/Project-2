@@ -1,13 +1,12 @@
 import React, { useState , useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-// import "bulma"
-//Pages Imports
 import Home from "./components/Pages/Home";
 import Navbar from "./components/UI/Navbar";
 import FishIndex from "./components/Pages/FishIndex"
 import ShowFish from "./components/Pages/ShowFish"
 import SustainableEating from "./components/Pages/SustainableEating";
 import RecipeCard from "./components/UI/RecipeCard";
+import Footer from"./components/UI/Footer"
 
 function App() {
 
@@ -38,6 +37,7 @@ function App() {
         <Route path="recipes/:recipeName" element={<RecipeCard />} />
         <Route path="/sustainable-eating" element={<SustainableEating />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

@@ -7,7 +7,7 @@ import styles from "./Fish.module.css"
 const Fish = (props) => {
 
   return <div className={styles.card_margin}>
-    <Link to={`/fish/${props.name}`}>
+    <Link style={{ textDecoration: "none" }} to={`/fish/${props.name}`}>
       <div className={`card ${styles.card_dimensions}` }>
         <div className="card-header">
           <div className={`card-header-title ${styles.card_header_text}`}>{props.name}</div>

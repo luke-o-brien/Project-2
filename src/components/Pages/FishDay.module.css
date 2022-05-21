@@ -1,4 +1,9 @@
 
+ @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+
+
 .card_margin {
   margin: 20px;
 }
@@ -8,7 +13,7 @@
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 
 }
 
@@ -16,10 +21,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 70px;
 
 }
 
 .fish_Day_Card {
+  display: flex;
+  flex-direction: column;
   width: 80%;
 }
 
@@ -62,7 +70,6 @@
   justify-content: center;
   text-transform: uppercase;
   margin: 30px;
-  font-size: 2rem;
-  text-decoration-style: wavy;
+  font-family: 'Righteous', cursive;
+  -webkit-text-fill-color: #1c87c9;
 }
-
