@@ -1,4 +1,4 @@
-import Footer from "../UI/Footer";
+//import Footer from "../UI/Footer";
 import Dailyfish from "../UI/Dailyfish";
 import ControlledCarousel from "../UI/ControlledCarousel";
 import TitleHeader from "../UI/TitleHeader";
