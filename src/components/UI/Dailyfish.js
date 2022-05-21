@@ -4,9 +4,9 @@ import FishDay from "../Pages/FishDay"
 function Dailyfish() {
 
   
-  let fishdex = 0
+  //let fishdex = 0
   let currentDate = "00/00/0000"
-  let currentFish = ""
+  //let currentFish = ""
   const [displayFish, setDisplayFish] = useState(undefined);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Dailyfish() {
       console.log(currentDate)
       if (localStorage.getItem("date") === null || localStorage.getItem("current fish" === null)) {
         localStorage.setItem("date", currentDate);
-        localStorage.setItem("current fish", currentFish)
+        localStorage.setItem("current fish", "")
         getRandom()
       } else if (localStorage.getItem("date") === currentDate) {
         const getFish = localStorage.getItem("current fish")

@@ -1,31 +1,22 @@
 import styles from "./FishAlternativeCard.module.css"
 import React from "react"
-import { Link } from "react-router-dom"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 //import { useEffect } from "react/cjs/react.production.min"
 
 function FishAlternativeCard () {
 
-  const [SelectedFish, setSelectedFish] = React.useState(undefined)
+  // const [SelectedFish, setSelectedFish] = React.useState(undefined)
   const [recipes, setRecipes] = React.useState(undefined)
-  const [recipeID, setRecipeID] = React.useState(undefined)
+  // const [recipeID, setRecipeID] = React.useState(undefined)
   const [fetched, setFetched] = React.useState(false)
   const [hake, setHake] = React.useState(false)
   const [trout, setTrout] = React.useState(false)
   const [mussels, setmussels] = React.useState(false)
 
-  function getvalue(e) {
-    const value = e.target.value
-    setRecipeID(value)
-    console.log(value)
-    recipeID
-  }
-
-
+ 
   function handleClick(e) {
     const selected = e.target.value 
-    setSelectedFish(selected)
+    // setSelectedFish(selected)
     const uri = "https://www.edamam.com/ontologies/edamam.owl#recipe_5008eb6dc11fe3eeab1e378d9dca806c"
     const recipeID = uri.substring(45);
     console.log(recipeID)
