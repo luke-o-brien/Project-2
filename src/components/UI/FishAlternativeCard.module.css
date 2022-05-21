@@ -6,3 +6,20 @@
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   
 }
+
+.fish_alternative_button {
+  text-decoration: underline;
+  border: none;
+  background: transparent;
+}
+
+.fish_alternative_div {
+  background-color: rgb(238, 238, 238);
+  margin: 10px;
+}
+
+.fish_alternative_photo {
+  height: 200px;
+  width: auto;
+  margin:20px;
+}

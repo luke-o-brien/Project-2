@@ -38,7 +38,7 @@ function FishAlternativeCard () {
     }
     console.log(selected)
     async function displayRecipes () {
-      const res = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${SelectedFish}&app_id=c820ed89&app_key=bc3febdffacc984b50b815c07ddcbef9`)
+      const res = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${selected}&app_id=c820ed89&app_key=bc3febdffacc984b50b815c07ddcbef9`)
       const data = await res.json()
       const recipesa = data.hits.map((hit) =>{
         return (hit.recipe)
@@ -61,41 +61,39 @@ function FishAlternativeCard () {
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy Cod?</h2>
         <h3>Try Hake</h3>
-        <button value="hake" onClick={handleClick} >View Recipes</button>
+        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="hake" onClick={handleClick} >View Recipes</button>
         {fetched && hake && recipes.map((recipe) =>{
-          return <>
-            <Link to={`/recipe/${recipe.label}`}>
-              <p key={recipe.label}>{recipe.label}</p>
-              <button value={recipe.uri} onClick={getvalue}>view full recipe</button>
-            </Link>
-          </>
+          return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
+            <p>{recipe.label}</p>
+            <img className={`fish-alternative-photo" ${styles.fish_alternative_photo}`} src={recipe.image}></img>
+            <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} href={recipe.url} >view full recipe</button>
+          </div>
         })}
       </div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy salmon?</h2>
         <h3>Try Rainbow Trout</h3>
-        <button value="trout" onClick={handleClick} >View Recipes</button>
+        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="trout" onClick={handleClick} >View Recipes</button>
         {fetched && trout && recipes.map((recipe) =>{
-          return  <>
-            <p key={recipe.label}>{recipe.label}</p>
-            <button value={recipe.uri} >view full recipe</button>
-          </>
+          return  <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
+            <p>{recipe.label}</p>
+            <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} href={recipe.url} >view full recipe</button>
+          </div>
         })}
       </div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy prawn?</h2>
         <h3>Try mussels</h3>
-        <button value="mussels" onClick={handleClick} >View Recipes</button>
+        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="mussels" onClick={handleClick} >View Recipes</button>
         {fetched && mussels && recipes.map((recipe) =>{
-          return  <>
-            <p key={recipe.label}>{recipe.label}</p>
-            <button value={recipe.uri} href={recipe.url}>view full recipe</button>
-          </>
+          return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
+            <p>{recipe.label}</p>
+            <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} href={recipe.url} >view full recipe</button>
+          </div>
         })}
       </div>
     </div> 
   )
-
 }
 
 
