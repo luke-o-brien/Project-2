@@ -6,7 +6,7 @@ import FishIndex from "./components/Pages/FishIndex"
 import ShowFish from "./components/Pages/ShowFish"
 import SustainableEating from "./components/Pages/SustainableEating";
 import RecipeCard from "./components/UI/RecipeCard";
-import Footer from"./components/UI/Footer"
+import Footer from "./components/UI/Footer"
 
 function App() {
 
