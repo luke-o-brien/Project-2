@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import SelectedFish from "../Pages/SelectedFish"
+import FishDay from "../Pages/FishDay"
 
 function Dailyfish() {
 
@@ -57,8 +57,8 @@ function Dailyfish() {
 
   return displayFish ?
     <>
-      <h2>Fish of The Day</h2>
-      <SelectedFish
+      
+      <FishDay
         name={displayFish["Species Name"]}
         fishingRate={displayFish["Fishing Rate"]}
         population={displayFish["Population"]}

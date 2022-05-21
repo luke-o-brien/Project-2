@@ -18,7 +18,7 @@ function ControlledCarousel() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>Detailed Sustainable Seafood Data</h3>
+          <h3>DETAILED SUSTAINABLE SEAFOOD DATA</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -29,7 +29,7 @@ function ControlledCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>More than 100 species profiled</h3>
+          <h3>MORE THAN 100 DIFFERENT SPECIES PROFILED</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -40,7 +40,7 @@ function ControlledCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Sustainable Recipes</h3>
+          <h3>SUSTAINABLE RECIPES</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

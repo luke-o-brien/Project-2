@@ -7,6 +7,7 @@
 .card_dimensions {
   height: 500px;
   width: 350px;
+ 
 }
 
 .card_image_size img {
@@ -29,6 +30,14 @@
   margin: 10px;
   font-size: 1.25rem;
   font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
+}
+
+.card_content_style h5 :link {
+  margin: 10px;
+  font-size: 1.25rem;
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none !important; 
 }
 
 .card_header_text {

@@ -6,7 +6,7 @@ import styles from "./SelectedFish.module.css"
 
 const SelectedFish = (props) => {
 
-  return <div className={styles.card_styling}>
+  return <div className={`${styles.card_style}`}>
     <div className="card">
       <div className={`card-header ${styles.card_header_style}`}>
         <div className={`card-header-title ${styles.card_header_text}`}>{props.name}</div>
