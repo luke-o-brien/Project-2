@@ -1,5 +1,7 @@
 import styles from "./FishAlternativeCard.module.css"
 import React from "react"
+import { Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 //import { useEffect } from "react/cjs/react.production.min"
 
@@ -7,13 +9,33 @@ function FishAlternativeCard () {
 
   const [SelectedFish, setSelectedFish] = React.useState(undefined)
   const [recipes, setRecipes] = React.useState(undefined)
+  const [recipeID, setRecipeID] = React.useState(undefined)
   const [fetched, setFetched] = React.useState(false)
+  const [hake, setHake] = React.useState(false)
+  const [trout, setTrout] = React.useState(false)
+  const [mussels, setmussels] = React.useState(false)
 
+  function getvalue(e) {
+    const value = e.target.value
+    setRecipeID(value)
+    console.log(value)
+    recipeID
+  }
 
 
   function handleClick(e) {
     const selected = e.target.value 
     setSelectedFish(selected)
+    const uri = "https://www.edamam.com/ontologies/edamam.owl#recipe_5008eb6dc11fe3eeab1e378d9dca806c"
+    const recipeID = uri.substring(45);
+    console.log(recipeID)
+    if (selected === "hake") {
+      setHake(!hake)
+    } else if (selected === "trout") {
+      setTrout(!trout)
+    } else if (selected === "mussels") {
+      setmussels(!mussels)
+    }
     console.log(selected)
     async function displayRecipes () {
       const res = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${SelectedFish}&app_id=c820ed89&app_key=bc3febdffacc984b50b815c07ddcbef9`)
@@ -25,24 +47,11 @@ function FishAlternativeCard () {
       const sources = recipesa.map((recipe) =>{
         return (recipe.source);
       });
-      
-      // to be stylish you could write the above as
-      //   const sources = recipes.map((recipe) => recipe.source)
       console.log(recipesa);
       console.log(sources); 
       setRecipes(recipesa)
-      //console.log(data)
-      //console.log(data.hits[0].recipe.label)
+
       setFetched(!fetched)
-      
-      // recipes.map((recipe) => {
-      //   return (
-      //     <>
-      //     <a>{recipe.hits.recipe.label}</a>
-      //     </>
-      //   )}
-    // ),
-    // })
     }
     displayRecipes()
   }
@@ -53,10 +62,12 @@ function FishAlternativeCard () {
         <h2>Fancy Cod?</h2>
         <h3>Try Hake</h3>
         <button value="hake" onClick={handleClick} >View Recipes</button>
-        {fetched && recipes.map((recipe) =>{
-          return  <>
-            <p key={recipe.label}>{recipe.label}</p>
-            <a href={recipe.url}>view full recipe</a>
+        {fetched && hake && recipes.map((recipe) =>{
+          return <>
+            <Link to={`/recipe/${recipe.label}`}>
+              <p key={recipe.label}>{recipe.label}</p>
+              <button value={recipe.uri} onClick={getvalue}>view full recipe</button>
+            </Link>
           </>
         })}
       </div>
@@ -64,16 +75,22 @@ function FishAlternativeCard () {
         <h2>Fancy salmon?</h2>
         <h3>Try Rainbow Trout</h3>
         <button value="trout" onClick={handleClick} >View Recipes</button>
-        {fetched && recipes.map((recipe) =>{
-          return <p key={recipe.label}>{recipe.label}</p>
+        {fetched && trout && recipes.map((recipe) =>{
+          return  <>
+            <p key={recipe.label}>{recipe.label}</p>
+            <button value={recipe.uri} >view full recipe</button>
+          </>
         })}
       </div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy prawn?</h2>
         <h3>Try mussels</h3>
         <button value="mussels" onClick={handleClick} >View Recipes</button>
-        {fetched && recipes.map((recipe) =>{
-          return <p key={recipe.label}>{recipe.label}</p>
+        {fetched && mussels && recipes.map((recipe) =>{
+          return  <>
+            <p key={recipe.label}>{recipe.label}</p>
+            <button value={recipe.uri} href={recipe.url}>view full recipe</button>
+          </>
         })}
       </div>
     </div> 

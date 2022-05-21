@@ -7,6 +7,7 @@ import Navbar from "./components/UI/Navbar";
 import FishIndex from "./components/Pages/FishIndex"
 import ShowFish from "./components/Pages/ShowFish"
 import SustainableEating from "./components/Pages/SustainableEating";
+import RecipeCard from "./components/UI/RecipeCard";
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
         <Route path="/" element={<Home data={fishData}/>} />
         <Route path="/fish-index" element={<FishIndex data={fishData} />} />
         <Route path="/fish/:fishName" element={<ShowFish />} />
-        <Route path ="/sustainable-eating" element={<SustainableEating />} />
+        <Route path="recipes/:recipeName" element={<RecipeCard />} />
+        <Route path="/sustainable-eating" element={<SustainableEating />} />
       </Routes>
     </Router>
   );
