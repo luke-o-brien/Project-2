@@ -52,18 +52,22 @@ function FishAlternativeCard () {
   return (
     <div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
-        <h2>Fancy Cod?</h2>
-        <h3>Why not try Hake?</h3>
-        <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="hake" onClick={handleClick} >View Recipes<i className={arrow === false ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i></button>
-        {fetched && hake && recipes.map((recipe) =>{
-          return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
-            <div className={`fish-alternative-div" ${styles.fish_alternative_content}`} >
-              <h4 className={`fish-alternative-photo" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
-              <img src={recipe.image} ></img>
-              <a className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >Click here to view full recipe!</a>
+        <div>
+          <h2>Fancy Cod?</h2>
+          <h3>Why not try Hake?</h3>
+          <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="hake" onClick={handleClick} >View Recipes<i className={arrow === false ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i></button>
+        </div>
+        <div className={`fish-alternative-container" ${styles.fish_alternative_container}`}>
+          {fetched && hake && recipes.map((recipe) =>{
+            return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
+              <div className={`fish-alternative-content" ${styles.fish_alternative_content}`} >
+                <h4 className={`fish-alternative-header" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
+                <img src={recipe.image} ></img>
+                <a className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >Click here to view full recipe!</a>
+              </div>
             </div>
-          </div>
-        })}
+          })}
+        </div>
       </div>
       <div className={`fish-alternative-box" ${styles.fish_alternative_box}`}>
         <h2>Fancy salmon?</h2>
@@ -71,10 +75,10 @@ function FishAlternativeCard () {
         <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="trout" onClick={handleClick} >View Recipes<i className={arrow === false ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i></button>
         {fetched && trout && recipes.map((recipe) =>{
           return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
-            <div className={`fish-alternative-div" ${styles.fish_alternative_content}`} >
-              <h4 className={`fish-alternative-photo" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
+            <div className={`fish-alternative-content" ${styles.fish_alternative_content}`} >
+              <h4 className={`fish-alternative-header" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
               <img src={recipe.image} ></img>
-              <a className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >Click here to view full recipe! </a>
+              <a className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >Click here to view full recipe!</a>
             </div>
           </div>
         })}
@@ -85,9 +89,11 @@ function FishAlternativeCard () {
         <button className={`fish-alternative-button" ${styles.fish_alternative_button}`} value="mussels" onClick={handleClick} >View Recipes<i className={arrow === false ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i></button>
         {fetched && mussels && recipes.map((recipe) =>{
           return <div className={`fish-alternative-div" ${styles.fish_alternative_div}`} key={recipe.label}>
-            <h4 className={`fish-alternative-photo" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
-            <img src={recipe.image} ></img>
-            <button className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >view full recipe</button>
+            <div className={`fish-alternative-content" ${styles.fish_alternative_content}`} >
+              <h4 className={`fish-alternative-header" ${styles.fish_alternative_header}`}>{recipe.label}</h4>
+              <img src={recipe.image} ></img>
+              <a className={`fish-alternative-button" ${styles.fish_alternative_link}`} href={recipe.url} >Click here to view full recipe!</a>
+            </div>
           </div>
         })}
       </div>

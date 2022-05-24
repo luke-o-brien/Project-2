@@ -34,7 +34,7 @@ function App() {
         <Route path="/" element={<Home data={fishData}/>} />
         <Route path="/fish-index" element={<FishIndex data={fishData} />} />
         <Route path="/fish/:fishName" element={<ShowFish />} />
-        <Route path="recipes/:recipeName" element={<RecipeCard />} />
+        {/* <Route path="recipes/:recipeName" element={<RecipeCard />} /> */}
         <Route path="/sustainable-eating" element={<SustainableEating />} />
       </Routes>
       <Footer />
