@@ -44,11 +44,11 @@ We began the project working together setting up the inital file and structure o
 After the inital set up we decided that we would work seperatly on different sections so that each person could specilize in one area whilst maximising our time. Throughout the project we kept in contact via zoom calls and slack. We had regular stand ups to update each other on our progress and to let the other know if we had hit any roadblocks or found any bugs. If we did find that we were stuck on an issue or needed to do debugging we would work together to solve the issue. 
 
 ### Challenge one - Daily Fish
-One of the componants that I took responsibility was the daily fish componant on the landing page. 
+One of the componants that I took responsibility was the daily fish componant on the landing page. To get this componant working there were a couple of option which I explored to get this working. The first was on the first load of the webpage of the day the api would return the next fish object in the array that the API returned. I also looked into a way of getting the same fish displayed for all users on each day even if they were acessing it from different devices, However i decided to use local storage and randomly return a fish each day. The reason I chose this method was it was achievable within the time allotted and it would be more maintainable in the long as it did not require hardcoding fish to dates and would be less suscuptible to changes in the API data. 
+
+The first function i wrote to implement this feature made use of the browsers local storage to help determine if a new fish needed to be produced. 
 
 ``` js
-
-function Dailyfish() {
 
   let currentDate = "00/00/0000"
   const [displayFish, setDisplayFish] = useState(undefined);
@@ -69,7 +69,13 @@ function Dailyfish() {
         getRandom()
       }
     } 
-  
+```
+I started by declaring a current date variable which was in date format but not a valid date. When the page loaded the getDate function would run. It would start by updating the current date variable with the date which the user opened the page, To get this i used the Date and localdatestring methods. I then wrote an if statement. If there was no date already stored in local storage or no fishdata currently stored then it would create a localstorage item and set it to the value of the current date variable, as well as creating an empty fish property before calling the getrandom function. 
+
+if the date in local storage was equal to the current date meaning that the user had already loaded the page that day. 
+
+
+``` Js 
     async function getRandom () {
       const fishdex = Math.floor(Math.random() * 115);
       const res = await fetch("https://cryptic-everglades-76066.herokuapp.com/https://www.fishwatch.gov/api/species")
