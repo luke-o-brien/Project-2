@@ -9,9 +9,8 @@
 - Planning,whiteboarding and working methods
 - Challenge one - Daily Fish 
 - Challenge Two - Suggested Recipes
-- Known Bugs 
 - Lessons Learnt 
-- Future development
+- Future developments
 
 
 
@@ -72,7 +71,7 @@ The first function i wrote to implement this feature made use of the browsers lo
 ```
 I started by declaring a current date variable which was in date format but not a valid date. When the page loaded the getDate function would run. It would start by updating the current date variable with the date which the user opened the page, To get this i used the Date and localdatestring methods. I then wrote an if statement. If there was no date already stored in local storage or no fishdata currently stored then it would create a localstorage item and set it to the value of the current date variable, as well as creating an empty fish property before calling the getrandom function. 
 
-if the date in local storage was equal to the current date meaning that the user had already loaded the page that day. 
+if the date in local storage was equal to the current date meaning that the user had already loaded the page that day then the function get the already stored fish from local storage and parses the data to valid and readable JSON data before updating the fishdisplay state which will allow it to render on the page. If neither of these is true which should not be the case then the getrandom function is called.
 
 
 ``` Js 
@@ -91,14 +90,18 @@ if the date in local storage was equal to the current date meaning that the user
   }, [])
 ```
 
+The GetRandom function firstly selects a random number between 0 and 115 (the number of fish in the API at the time of creation). It then makes a call to the api which returns all fish and the fishdex variable is then used to locate and return the object at that index. The function will set this in state and make sure that it is in a usable Json format before finally updating the date in the state. One of the weaknesses in this function is that if the number of fish in the API changes especially if fish are removed there is potential for the function to return a object which doesn't exist. A more sustainable method would be for the function to loop through the objects in the array the API returns and determine the length and then use that as the multiplied value in the random number function. 
+
 ### Challenge Two - Suggested Recipes
 
 
-### Known Bugs
 
 ### Lessons Learnt 
 - How to make use of documentation. Throughout this project I was using both API documentation along with react and bulma documentation to get a better understanding of how each of these worked and how i could use them to achieve my project aims.
 - The importance of Git. This was the first time I had worked on a respository with another person and I have gained both a greater understanding of Git as well as learning the importance of committing and pushing work to avoid conflicts that may overwrite or affect another persons work. 
 - I have greatly improved my communication skills during this project it was essetial that we both kept in frequent communication so we each knew what we were working on and if we were facing any problems which may impact on the timeline of the project or on the work the other was working on. 
+
 ### Future developments
-- Adding a 
+- Instead of recipes linking out to external sites I would create a react componant which would render these on our site similar to the fish. 
+- Using local storage give the user the ability to save favorite fish or favorite recipes and have a page where the user can view the items which they have saved 
+- continue developing the UI bringing the recipe pages up to the same standards as the fish UI and developing this further to make it more athsteically pleasing for the user to use.
