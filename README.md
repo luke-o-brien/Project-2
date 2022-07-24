@@ -38,6 +38,10 @@ This Project Involved building a multipage front-end React web app which utilise
 
 We started by brainstorming ideas for the project and we created brief outlines of a shortlisted options. We decided that the fish project was of interest to both of us and fishWatch API was one of most detailed that we had found. Once we had settled on this we began to whiteboard and create wireframes. We discussed what features we would like our project to have and how and what would be achievable in the timeframe we had. After creating the wireframes we spent some time dividing up what needed to be created between us. 
 
+<img src="src/assets/Screenshot 2022-07-24 at 13.17.26.png" position/></img>
+<img src="src/assets/Screenshot 2022-07-24 at 13.18.06.png" position/></img>
+<img src="src/assets/Screenshot 2022-07-24 at 13.18.21.png" position/></img>
+
 We began the project working together setting up the inital file and structure of the app. We also jointly set up and tested the function for making API calls and storing the data as this would be key for both of us to work on our respective sections. 
 
 After the inital set up we decided that we would work seperatly on different sections so that each person could specilize in one area whilst maximising our time. Throughout the project we kept in contact via zoom calls and slack. We had regular stand ups to update each other on our progress and to let the other know if we had hit any roadblocks or found any bugs. If we did find that we were stuck on an issue or needed to do debugging we would work together to solve the issue. 
@@ -94,6 +98,35 @@ The GetRandom function firstly selects a random number between 0 and 115 (the nu
 
 ### Challenge Two - Suggested Recipes
 
+The Second component which I was responsible for making was the suggested alternatives to help users make better choices when cooking. I decided to hard code the alternatives based on research i had done. I made this choice as the Fishwatch API did not have data that could be used to achieve this. I decided to use the Edamam Recipe API for this component as it had an extensive amount of data and included a number of options for adding queries on to the end of the API request, which would be useful if we wanted to develop the site at a later state to give the user more control over what recipes they wanted returned. This API was a challenge to use for two reasons. firstly the API's which I had interacted with previously were simple get requests. However this one included queries which I had not worked with before which required me to spend time reading the API's documentation to familierize myself with how these worked. 
+
+The second reason that this was challenging was This was the first API which I had used that was protected with authorization and therefore I needed to read the documentation to work out how to append this to the api call to allow this to work properly. 
+
+The third problem which I faced in creating this componant was with the buttons to view more recipes. Initially i set this up using a display state which toggled and set to true when the user clicked on display recipes. The problem which this created was that all recipe divs would expand rather than just the one which the user had clicked on. To fix this I created three pieces of state relating to each of the fish. 
+
+``` js 
+  const [hake, setHake] = React.useState(false)
+  const [trout, setTrout] = React.useState(false)
+  const [mussels, setmussels] = React.useState(false)
+```
+
+Then within the handleclick function i created a variable which was assigned the value of the button the user clicked on. I then wrote if statements which checked what the value of the clicked button was and if the value matched what was within the condition then the state would be toggled.
+
+ function handleClick(e) {
+    const selected = e.target.value 
+    if (selected === "hake") {
+      setHake(!hake)
+    } else if (selected === "trout") {
+      setTrout(!trout)
+    } else if (selected === "mussels") {
+      setmussels(!mussels)
+    }
+    
+This state being toggled would be stored and then used in the reacts return as part of a conditional rendering statement. If the fish state was true and the fetched state which was set to true once data had been recieved by the API the the page would expand that div and display the recipes leaving the others collasped.
+
+``` js 
+fetched && hake && recipes.map((recipe) =>{
+```
 ### Project Screenshots 
 
 <img src="src/assets/Screenshot 2022-07-23 at 23.51.05.png" position/></img>
@@ -106,7 +139,7 @@ The GetRandom function firstly selects a random number between 0 and 115 (the nu
 - The importance of Git. This was the first time I had worked on a respository with another person and I have gained both a greater understanding of Git as well as learning the importance of committing and pushing work to avoid conflicts that may overwrite or affect another persons work. 
 - I have greatly improved my communication skills during this project it was essetial that we both kept in frequent communication so we each knew what we were working on and if we were facing any problems which may impact on the timeline of the project or on the work the other was working on. 
 
-### Future developments
+### Possible Future Developments
 - Instead of recipes linking out to external sites I would create a react componant which would render these on our site similar to the fish. 
 - Using local storage give the user the ability to save favorite fish or favorite recipes and have a page where the user can view the items which they have saved 
 - continue developing the UI bringing the recipe pages up to the same standards as the fish UI and developing this further to make it more athsteically pleasing for the user to use.
