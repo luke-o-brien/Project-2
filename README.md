@@ -94,7 +94,12 @@ The GetRandom function firstly selects a random number between 0 and 115 (the nu
 
 ### Challenge Two - Suggested Recipes
 
+### Project Screenshots 
 
+<img src="src/assets/Screenshot 2022-07-23 at 23.51.05.png" position/></img>
+<img src="src/assets/Screenshot 2022-07-23 at 23.51.19.png" position/></img>
+<img src="src/assets/Screenshot 2022-07-23 at 23.51.37.png" position/></img>
+<img src="src/assets/Screenshot 2022-07-23 at 23.52.13.png" position/></img>
 
 ### Lessons Learnt 
 - How to make use of documentation. Throughout this project I was using both API documentation along with react and bulma documentation to get a better understanding of how each of these worked and how i could use them to achieve my project aims.
