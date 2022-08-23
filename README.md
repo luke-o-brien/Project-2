@@ -19,7 +19,10 @@ This Project Involved building a multipage front-end React web app which utilise
 - Include wireframes** - that you designed before building the app.
 - Have semantically clean HTML - you make sure you write HTML that makes structural sense rather than thinking about how it might look, which is the job of CSS.
 
-
+### Code Installation:
+1. Clone or download the repo
+2. Install dependencies in terminal with command: npm i 
+Start server with terminal command: npm start
 
 ### Planning,whiteboarding and Working Methods
 
