@@ -103,7 +103,7 @@ The third problem which I faced in creating this component was with the buttons 
 ```
 
 Then within the handleclick function i created a variable which was assigned the value of the button the user clicked on. I then wrote if statements which checked what the value of the clicked button was and if the value matched what was within the condition then the state would be toggled.
-
+``` js 
  function handleClick(e) {
     const selected = e.target.value 
     if (selected === "hake") {
@@ -113,7 +113,7 @@ Then within the handleclick function i created a variable which was assigned the
     } else if (selected === "mussels") {
       setmussels(!mussels)
     }
-    
+``` 
 This state being toggled would be stored and then used in the react return as part of a conditional rendering statement. If the fish state was true and the fetched state which was set to true once data had been received by the API then the page would expand that div and display the recipes leaving the others collapsed.
 
 ``` js 
