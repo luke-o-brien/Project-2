@@ -24,7 +24,8 @@ This Project Involved building a multipage front-end React web app which utilise
 2. Install dependencies in terminal with command: npm i 
 Start server with terminal command: npm start
 
-### Planning,whiteboarding and Working Methods
+### Planning and Whiteboarding
+
 
 We started by brainstorming ideas for the project and we created brief outlines of a shortlisted options. We decided that the fish project was of interest to both of us and the fishWatch API was one of the most detailed that we had found. Once we had settled on this we began to whiteboard and create wireframes. We discussed what features we would like our project to have and how and what would be achievable in the timeframe we had. After creating the wireframes we spent some time dividing up what needed to be created between us. 
 
@@ -32,10 +33,12 @@ We started by brainstorming ideas for the project and we created brief outlines 
 <img src="src/assets/Screenshot 2022-07-24 at 13.18.06.png" position/></img>
 <img src="src/assets/Screenshot 2022-07-24 at 13.18.21.png" position/></img>
 
-We began the project working together setting up the initial file and structure of the app. We also jointly set up and tested the function for making API calls and storing the data as this would be key for both of us to work on our respective sections. 
+### Working Methods
+Following the planning and whiteboarding stage. My partner Dan and I began the project working together setting up the initial file and structure of the app. This included the app.js file with the router and routes, home pages and a start up CSS file. We also jointly set up and tested the function for making API calls and storing the data as this would be key for both of us to work on our respective sections.
 
-After the initial set up we decided that we would work separately on different sections so that each person could specialise in one area whilst maximising our time. Throughout the project we kept in contact via zoom calls and slack. We had regular stand ups to update each other on our progress and to let the other know if we had hit any roadblocks or found any bugs. If we did find that we were stuck on an issue or needed to do debugging we would work together to solve the issue. 
+After the initial set up, we decided that we would work separately on different sections so that each person could specialise in one area whilst maximising the limited time we had to complete the project. Dan took responsibility for the creation of the fish index and the individual fish pages. I began my work with the fish of the day element as this was a core part of our landing page and required working out logic. Following this I moved on to integrating our second API which was the Edamam recipe API. This involved registering for the API services, reading documentation to understand how the API worked and then writing the code which would allow the API to be called and have the response rendered on the page.
 
+Throughout the project, we kept in contact via zoom calls and slack. We had regular stand ups to update each other on our progress and to let the other know if we had hit any roadblocks or found any bugs. If we did find that we were stuck on an issue or needed to do debugging, we would work together to solve the issue.
 
 ### Challenge one - Daily Fish
 One of the components that I took responsibility for was the daily fish component on the landing page. To get this component working there were a couple of options which I explored to get this working. The first was on the first load of the webpage of the day the api would return the next fish object in the array that the API returned. I also looked into a way of getting the same fish displayed for all users on each day even if they were accessing it from different devices, However I decided to use local storage and randomly return a fish each day. The reason I chose this method was it was achievable within the time allotted and it would be more maintainable in the long as it did not require hardcoding fish to dates and would be less susceptible to changes in the API data. 
@@ -125,6 +128,11 @@ fetched && hake && recipes.map((recipe) =>{
 <img src="src/assets/Screenshot 2022-07-23 at 23.51.19.png" position/></img>
 <img src="src/assets/Screenshot 2022-07-23 at 23.51.37.png" position/></img>
 <img src="src/assets/Screenshot 2022-07-23 at 23.52.13.png" position/></img>
+
+### Wins
+- Completed our first pair project and we were able to create a multi page react app which consumed two third party APIs and displayed data from these in different forms within our web application. 
+- Created a working fish of the day element which made use of the fishwatch API and the browsers localstorage to display information about a different fish at random if the user visits the page on a different day. 
+- Managed to integrate a second API into the project to enable us to display recipes. Making use of query parameters to set certain parameters with some of these being hard coded into the project and type of the fish being altered by the user input. 
 
 ### Lessons Learnt 
 - How to make use of documentation. Throughout this project I was using both API documentation along with react and bulma documentation to get a better understanding of how each of these worked and how I could use them to achieve my project aims.
